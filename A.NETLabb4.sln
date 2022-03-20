@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A.NETLabb4.Models", "A.NETLabb4.Models\A.NETLabb4.Models.csproj", "{AE2A2559-AAAC-47B6-B5CB-E08D7E479849}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A.NETLabb4.API", "A.NETLabb4.API\A.NETLabb4.API.csproj", "{2A56D42F-19D0-438B-A232-EB8160A1B3F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE2A2559-AAAC-47B6-B5CB-E08D7E479849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE2A2559-AAAC-47B6-B5CB-E08D7E479849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE2A2559-AAAC-47B6-B5CB-E08D7E479849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE2A2559-AAAC-47B6-B5CB-E08D7E479849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A56D42F-19D0-438B-A232-EB8160A1B3F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A56D42F-19D0-438B-A232-EB8160A1B3F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A56D42F-19D0-438B-A232-EB8160A1B3F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A56D42F-19D0-438B-A232-EB8160A1B3F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {767D9411-7CED-48B5-A2EB-3C369E10D9DE}
+	EndGlobalSection
+EndGlobal
