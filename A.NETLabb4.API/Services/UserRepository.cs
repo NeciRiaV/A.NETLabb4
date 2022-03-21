@@ -15,18 +15,21 @@ namespace A.NETLabb4.API.Services
         {
             _appContext = appContext;
         }
-
         public async Task<IEnumerable<User>> GetAll()
         {
             return await _appContext.Users.ToListAsync();
         }
+
+
+        //---------------------------------------
 
         public Task<User> Add(User newEntity)
         {
             throw new NotImplementedException();
         }
 
-        public Task<User> GetAll(int id)
+
+        public Task<IEnumerable<User>> GetLinks(int id)
         {
             throw new NotImplementedException();
         }
@@ -36,12 +39,12 @@ namespace A.NETLabb4.API.Services
             throw new NotImplementedException();
         }
 
-        public Task<User> Update(User Entity)
+        public Task<IEnumerable<User>> GetSingelUser(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<User> Delete(int id)
+        public Task<User> Update(User Entity)
         {
             throw new NotImplementedException();
         }

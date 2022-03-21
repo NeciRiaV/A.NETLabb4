@@ -20,7 +20,18 @@ namespace A.NETLabb4.API.Services
             return await _appContext.Hobbies.ToListAsync();
         }
 
+
+
+        //-------------------------------------------------------
+
+
         public Task<Hobby> Add(Hobby newEntity)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public Task<IEnumerable<Hobby>> GetLinks(int id)
         {
             throw new NotImplementedException();
         }
@@ -30,17 +41,12 @@ namespace A.NETLabb4.API.Services
             throw new NotImplementedException();
         }
 
+        public Task<IEnumerable<Hobby>> GetSingelUser(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<Hobby> Update(Hobby Entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Hobby> Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<Hobby> ILabb4API<Hobby>.GetAll(int id)
         {
             throw new NotImplementedException();
         }

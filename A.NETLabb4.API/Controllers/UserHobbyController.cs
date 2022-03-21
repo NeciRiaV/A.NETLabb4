@@ -35,29 +35,28 @@ namespace A.NETLabb4.API.Controllers
         }
 
         //GET HOBBIES FOR SINGEL USER
-        [HttpGet("{id}")]
-        public async Task<ActionResult> GetHobbyForSingelUser(int id)
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetSingelUser(int id)
         {
-            try
+            var result = await _labb4UsHo.GetSingelUser(id);
+            if (result.Any())
             {
-                return Ok(await _labb4UsHo.GetAll(id));
-            //var result = await _labb4UsHo.GetSingel(id);
-            //    if (result == null)
-            //    {
-            //        return NotFound();
-            //    }
-            //    return result;
+                return Ok(result);
             }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                    "Error: Could not retrive singel User from database.....");
-            }
+            return NotFound();
         }
+
         //GET ALL LINKS TO SINGEL USER
-
-
-
+        [HttpGet("{getlinks}")]
+        public async Task<ActionResult<UserHobby>> GetLinks(int id)
+        {
+            var result = await _labb4UsHo.GetLinks(id);
+            if (result.Any())
+            {
+                return Ok(result);
+            }
+            return NotFound();
+        }
 
         //ADD NEW HOBBY TO SINGEL USER
         [HttpPost]
@@ -70,7 +69,7 @@ namespace A.NETLabb4.API.Controllers
                     return BadRequest();
                 }
                 var createdNewUserHobby = await _labb4UsHo.Add(newUserHobby);
-                return CreatedAtAction(nameof(AddNewUserHobby), new { id = createdNewUserHobby.UserID}, createdNewUserHobby);
+                return CreatedAtAction(nameof(AddNewUserHobby), new { id = createdNewUserHobby.UserID }, createdNewUserHobby);
             }
             catch (Exception)
             {
@@ -78,8 +77,27 @@ namespace A.NETLabb4.API.Controllers
             }
         }
 
-
-
-        //ADD NEW LINK TO SINGEL USER AND HOBBY
+        //UPDATE LINK 
+        [HttpPut("{id}")]
+        public async Task<ActionResult<UserHobby>> UpdateLink(int id, UserHobby UsHo)
+        {
+            try
+            {
+                if (id != UsHo.UserHobbyID)
+                {
+                    return BadRequest("UserHobby ID doesn't exist....");
+                }
+                var LinkToUpdate = await _labb4UsHo.GetSingel(id);
+                if (LinkToUpdate == null)
+                {
+                    return NotFound($"UserHobby with ID {id} not found....");
+                }
+                return await _labb4UsHo.Update(UsHo);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ("Error: could not update UserHobby in database"));
+            }
+        }
     }
 }
