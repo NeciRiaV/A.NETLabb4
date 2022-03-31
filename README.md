@@ -1,11 +1,11 @@
 # A.NETLabb4
 
 
-GetAllUsers : https://localhost:44334/api/user
+GetAllUsers : https://localhost:44334/api/User
 
-GetAllHobbiesForSingelUser : https://localhost:44334/api/userhobby/1
+GetAllHobbiesForSingelUser : https://localhost:44334/api/User/1
 
-GetAllLinksForSingelUser : https://localhost:44334/api/userhobby/getlinks?id=3
+GetAllLinksForSingelUser : https://localhost:44334/api/User/getlinks?id=3
 
 AddNewHobbyToUser : 
 	POST -> Body -> Raw ->JSON -> https://localhost:44334/api/userhobby
